@@ -1,13 +1,23 @@
-var request = new XMLHttpRequest();
+const songName = document.querySelector("#song") 
+const singer = document.querySelector("#singer") 
+const search = document.querySelector("#search") 
+const lyric = document.querySelector("#lyric")
 
-request.open('GET', 'https://api.lyrics.ovh/v1/Coldplay/Adventure of a Lifetime');
 
-request.onreadystatechange = function () {
-  if (this.readyState === 4) {
-    console.log('Status:', this.status);
-    console.log('Headers:', this.getAllResponseHeaders());
-    console.log('Body:', this.responseText);
-  }
-};
+async function getData(singer,song) {
+try {
+        const responce = await fetch(`https://api.lyrics.ovh/v1/${singer}/${song}`, {})
+        const data = await responce.json()
+        lyric.textContent = data.lyrics
+    }
+    catch (error) {
+        return error
+    }
+}
 
-request.send();
+search.addEventListener("click", (e) => {
+	e.preventDefault()
+	const singerInp = singer.value
+    const songInp = songName.value
+    getData(singerInp, songInp)
+})

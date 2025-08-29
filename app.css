@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 section {
-  background: linear-gradient(180deg, #2e003e, #7f007dd0);
+  background: linear-gradient(180deg, #2e003e, #4b0055d0);
   font-family: "Poppins", sans-serif;
   min-height: 100vh;
   margin: 0;
@@ -39,6 +39,7 @@ form div {
 label {
   margin-bottom: 0.4rem;
   font-weight: 500;
+  color: #ff69b4;
 }
 
 input {
@@ -52,7 +53,7 @@ input {
 }
 
 input::placeholder {
-  color: #dddddd;
+  color: #959595fc;
 }
 
 button {
@@ -71,12 +72,19 @@ button:hover {
   box-shadow: 0 4px 12px rgba(255, 105, 180, 0.5);
 }
 
-/* Lyrics Section */
 .lyrics {
   max-width: 800px;
   margin: 0 auto;
-  white-space: pre-line;  /* keeps line breaks */
-  font-size: 1.1rem;
+  white-space: pre-line; 
+}
+
+p{
+  text-align: center;
+  white-space: pre-line;
+  line-height: 200%;
+  font-size: 18px;
+  margin: 0 auto;
+  width: 80%;
 }
 
 @media only screen and (max-width: 550px) {
